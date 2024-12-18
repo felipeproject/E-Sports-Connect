@@ -1,0 +1,90 @@
+:root {
+    --cor-escura: #1f2a44; /* Azul escuro mais suave */
+    --cor-clara: #ffffff;
+    --cinza-claro: #f1f3f8; /* Cinza claro e suave */
+    --cinza-escuro: #8a8a8a; /* Cinza escuro suave */
+    --azul-petroleo: #3b4d66; /* Azul petróleo */
+    --verde-neon: #32e87f; /* Verde neon mais suave */
+    --brilho: rgba(255, 255, 255, 0.6);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--azul-petroleo), var(--cor-escura)); /* Gradiente de fundo moderno */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.navbar {
+    background-color: var(--azul-petroleo);
+    color: var(--cor-clara);
+    padding: 1.25rem 1.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--cinza-claro);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--cor-clara);
+    padding: 0.75rem 1.25rem;
+    font-size: 1.125rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--azul-claro);
+    background-color: var(--azul-petroleo);
+    text-shadow: 0 0 8px var(--brilho), 0 0 15px var(--brilho);
+}
+
+.navbar a.login:hover {
+    background-color: #28b658; /* Um verde mais escuro para hover */
+    color: var(--cor-clara);  /* Cor do texto permanece branca */
+    text-shadow: 0 0 8px var(--brilho), 0 0 15px var(--brilho);
+}
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-right: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .navbar li {
+        margin-bottom: 1rem;
+    }
+}
