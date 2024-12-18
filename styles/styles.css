@@ -1,11 +1,12 @@
 :root {
-    --cor-escura: #1f2a44; /* Azul escuro mais suave */
+    --cor-escura: #1f2a44;
     --cor-clara: #ffffff;
-    --cinza-claro: #f1f3f8; /* Cinza claro e suave */
-    --cinza-escuro: #8a8a8a; /* Cinza escuro suave */
-    --azul-petroleo: #3b4d66; /* Azul petróleo */
-    --verde-neon: #32e87f; /* Verde neon mais suave */
+    --cinza-claro: #f1f3f8;
+    --cinza-escuro: #8a8a8a;
+    --azul-petroleo: #3b4d66;
+    --verde-neon: #31af31;
     --brilho: rgba(255, 255, 255, 0.6);
+    --transicao-suave: 0.2s ease-in-out;
 }
 
 html, body {
@@ -13,53 +14,70 @@ html, body {
     margin: 0;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, var(--azul-petroleo), var(--cor-escura)); /* Gradiente de fundo moderno */
+    background: linear-gradient(135deg, var(--azul-petroleo), var(--cor-escura));
 }
 
+a {
+    color: inherit; /* Herda a cor do texto ao redor, mantendo o estilo */
+}
+
+/* Transições gerais */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
 .navbar {
+
     background-color: var(--azul-petroleo);
     color: var(--cor-clara);
-    padding: 1.25rem 1.875rem;
+    padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--cinza-claro);
-    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--cinza-claro);
     border-radius: 10px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    transition: background-color var(--transicao-suave), border-color var(--transicao-suave);
 }
 
 .navbar a {
-    text-decoration: none;
-    color: var(--cor-clara);
     padding: 0.75rem 1.25rem;
     font-size: 1.125rem;
     letter-spacing: 0.5px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: color var(--transicao-suave), transform var(--transicao-suave), box-shadow var(--transicao-suave);
 }
 
+.navbar a i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+
+
+/* Efeito de hover mais sutil */
 .navbar a:hover {
-    color: var(--azul-claro);
-    background-color: var(--azul-petroleo);
-    text-shadow: 0 0 8px var(--brilho), 0 0 15px var(--brilho);
+
+    /* funcionou quando coloquei ele aqui  */
+    text-decoration: none;
+
+    color: var(--verde-neon);
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil para o hover */
+    box-shadow: 0 0 6px var(--verde-neon), 0 0 10px var(--verde-neon);
 }
 
-.navbar a.login:hover {
-    background-color: #28b658; /* Um verde mais escuro para hover */
-    color: var(--cor-clara);  /* Cor do texto permanece branca */
-    text-shadow: 0 0 8px var(--brilho), 0 0 15px var(--brilho);
+/* Efeito sutil quando pressionado */
+.navbar a:active {
+    transform: scale(0.98);
 }
-
 
 .navbar ul {
     display: flex;
@@ -70,6 +88,13 @@ html, body {
 
 .navbar li {
     margin-right: 1.25rem;
+    transition: color var(--transicao-suave);
+}
+
+/* Hover nos itens de lista - apenas mudanças de cor e sombra */
+.navbar li:hover {
+    color: var(--verde-neon);
+    box-shadow: 0 0 6px var(--verde-neon), 0 0 10px var(--verde-neon);
 }
 
 @media (max-width: 768px) {

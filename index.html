@@ -1,17 +1,52 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Ícones Font Awesome -->
+
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Link para o JavaScript do Bootstrap (com dependências do jQuery e Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Página Inicial</title>
 </head>
+
 <body>
-    <div>
-        <div id="navbar"></div>
-        <div id="content">
-        </div>
+    <!-- Div onde a navbar será carregada dinamicamente -->
+    <div id="navbar"></div>
+
+    <!-- Content Section -->
+    <div id="content" class="container mt-5">
+        <h1>Bem-vindo à Página!</h1>
+        <p>Este é o conteúdo da página inicial.</p>
     </div>
+
+    <!-- Script para carregar a navbar dinamicamente -->
+    <script>
+        // Função para carregar o conteúdo da navbar
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar a navbar:', error));
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = loadNavbar;
+    </script>
+
+    <!-- Script JavaScript -->
     <script src="scripts/script.js"></script>
 </body>
+
 </html>

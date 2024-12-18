@@ -1,16 +1,29 @@
 <!-- navbar.html -->
-<nav class="navbar" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--azul-petroleo);">
     <a href="#" class="logo" aria-label="Logo da E-sport Connect">
-        <i class="fas fa-gamepad"></i> E-sport Connect
+        <i class="fa-solid fa-trophy"></i> E-sport Connect
     </a>
-    <ul>
-
-        <li><a href="#" onclick="loadPage('campeonatos')" aria-label="Ir para a página de campeonatos"><i class="fas fa-trophy"></i> Campeonatos</a></li>
-        <li><a href="#" onclick="loadPage('times')" aria-label="Ir para a página de times"><i class="fas fa-users"></i> Times</a></li>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="#" onclick="loadPage('campeonatos')" aria-label="Ir para a página de campeonatos">
+                <i class="fa-solid fa-medal"></i> Campeonatos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" onclick="loadPage('times')" aria-label="Ir para a página de times">
+                <i class="fas fa-users"></i> Times
+            </a>
+        </li>
         <!-- Link para o servidor do Discord -->
-        <li><a href="https://discord.gg/seu-link-do-servidor" target="_blank" aria-label="Acesse nosso servidor do Discord">
-            <i class="fab fa-discord"></i> Discord
-        </a></li>
-        <li><a href="#" onclick="loadPage('login')" class="login" aria-label="Ir para a página de login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li class="nav-item">
+            <a href="https://discord.gg/seu-link-do-servidor" target="_blank" aria-label="Acesse nosso servidor do Discord">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" onclick="loadPage('login')" class="login" aria-label="Ir para a página de login">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+        </li>
     </ul>
 </nav>
