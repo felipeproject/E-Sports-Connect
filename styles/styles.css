@@ -1,124 +1,96 @@
+:root {
+    --background-color: #2c3e50; /* Cor de fundo principal */
+    --light-text: #ecf0f1; /* Cor do texto claro */
+    --accent-color: #f39c12; /* Cor de destaque */
+    --secondary-color: #bdc3c7; /* Cor do ícone */
+    --white-color: #ffffff; /* Cor branca */
+}
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1c3432, #0a0a0a);
+    background: linear-gradient(135deg, var(--background-color), #34495e);
+    color: var(--light-text);
 }
 
-a {
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a, a:visited, a:active, a:hover {
+    text-decoration: none !important;
     color: inherit;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
 .navbar {
-    background-color: #1c2a34;
-    color: #e5e5e5;
-    padding: 10px 20px;
+    background-color: rgba(44, 62, 80, 0.85);
+    color: var(--light-text);
+    padding: 12px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 2px solid #34495e;
     border-radius: 8px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .navbar .logo {
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.navbar .search-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar .search-container input {
-    padding: 8px 12px;
-    border: 2px solid #2a2a2a;
-    border-radius: 20px;
-    width: 250px;
-    font-size: 1rem;
-    background-color: #333;
-    color: #fff;
-    transition: width 0.3s ease-in-out;
-}
-
-.navbar .search-container input:focus {
-    width: 350px;
-    outline: none;
-    border-color: #4CAF50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-color);
 }
 
 .navbar a {
-    padding: 10px 20px;
-    letter-spacing: 0.5px;
+    padding: 1px 15px;
+    margin: 0 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 8px;
-    transition: color 0.25s ease;
+    color: var(--light-text);
+    opacity: 0.6;  /* Inicia com opacidade reduzida */
+    transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .navbar a i {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-    transition: color 0.25s ease;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+    color: var(--secondary-color);
+    opacity: 0.6; /* Inicia com opacidade reduzida */
+    transition: opacity 0.3s ease, color 0.3s ease;
 }
 
+/* Efeito de brilho ao passar o mouse (hover) */
 .navbar a:hover {
-    text-decoration: none;
-    color: #ffffff;
+    opacity: 1;  /* Aumenta a opacidade no hover */
+    color: var(--white-color);  /* Torna o texto branco */
 }
 
-.navbar a:active {
-    transform: scale(1);
+.navbar a:hover i {
+    color: inherit;  /* O ícone herda a cor do texto no hover */
+    opacity: 1;  /* Aumenta a opacidade do ícone */
 }
 
-.navbar ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap; /* Permite que os itens "quebrem" para a próxima linha se necessário */
+/* Efeito de brilho também ao focar (acessibilidade) */
+.navbar a:focus, .navbar a:focus-visible {
+    opacity: 1;  /* Aumenta a opacidade ao focar */
+    color: var(--white-color);  /* Torna o texto branco ao focar */
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
 }
 
-.navbar li {
-    margin-right: 20px;
-    transition: color 0.25s ease;
-}
-
+/* Responsividade: ajuste da navbar em telas pequenas */
 @media (max-width: 768px) {
-    .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Diminui o tamanho da fonte para caber melhor */
-        padding-left: 8px; /* Diminui o padding para otimizar o espaço */
-        padding-right: 8px;
-    }
-
-    .navbar ul {
-        justify-content: center; /* Centraliza os itens em dispositivos móveis */
-        flex-wrap: wrap; /* Permite que os itens da navbar quebrem para a próxima linha em telas pequenas */
-    }
-
-    .navbar li {
-        margin-right: 15px; /* Diminui o espaçamento entre os itens */
-        margin-bottom: 10px; /* Adiciona um pequeno espaçamento vertical */
-    }
-
-    .navbar .search-container input {
-        width: 100%;
-        margin-top: 10px;
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
-
