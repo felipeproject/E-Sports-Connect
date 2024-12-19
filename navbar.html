@@ -3,27 +3,34 @@
     <a href="#" class="logo" aria-label="Logo da E-sport Connect">
         <i class="fa-solid fa-trophy"></i> E-sport Connect
     </a>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a href="#" onclick="loadPage('campeonatos')" aria-label="Ir para a página de campeonatos">
-                <i class="fa-solid fa-medal"></i> Campeonatos
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" onclick="loadPage('times')" aria-label="Ir para a página de times">
-                <i class="fas fa-users"></i> Times
-            </a>
-        </li>
-        <!-- Link para o servidor do Discord -->
-        <li class="nav-item">
-            <a href="https://discord.gg/seu-link-do-servidor" target="_blank" aria-label="Acesse nosso servidor do Discord">
-                <i class="fab fa-discord"></i> Discord
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" onclick="loadPage('login')" class="login" aria-label="Ir para a página de login">
-                <i class="fas fa-sign-in-alt"></i> Login
-            </a>
-        </li>
-    </ul>
+    <!-- Botão para toggle da navbar em dispositivos móveis -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Links de navegação (ocultos em telas pequenas, aparecem com o toggle) -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="#" onclick="loadPage('campeonatos')" aria-label="Ir para a página de campeonatos">
+                    <i class="fa-solid fa-medal"></i> Campeonatos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" onclick="loadPage('times')" aria-label="Ir para a página de times">
+                    <i class="fas fa-users"></i> Times
+                </a>
+            </li>
+            <!-- Link para o servidor do Discord -->
+            <li class="nav-item">
+                <a href="https://discord.gg/seu-link-do-servidor" target="_blank" aria-label="Acesse nosso servidor do Discord">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" onclick="loadPage('login')" class="login" aria-label="Ir para a página de login">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>

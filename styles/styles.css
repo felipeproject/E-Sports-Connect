@@ -1,82 +1,89 @@
-:root {
-    --cor-escura: #1f2a44;
-    --cor-clara: #ffffff;
-    --cinza-claro: #f1f3f8;
-    --cinza-escuro: #8a8a8a;
-    --azul-petroleo: #3b4d66;
-    --verde-neon: #31af31;
-    --brilho: rgba(255, 255, 255, 0.6);
-    --transicao-suave: 0.2s ease-in-out;
-}
-
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, var(--azul-petroleo), var(--cor-escura));
+    background: linear-gradient(135deg, #1c3432, #0a0a0a);
 }
 
 a {
-    color: inherit; /* Herda a cor do texto ao redor, mantendo o estilo */
+    color: inherit;
 }
 
-/* Transições gerais */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
 .navbar {
-
-    background-color: var(--azul-petroleo);
-    color: var(--cor-clara);
-    padding: 1rem 1.5rem;
+    background-color: #1c2a34;
+    color: #e5e5e5;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--cinza-claro);
-    border-radius: 10px;
+    border-bottom: 1px solid #2a2a2a;
+    border-radius: 8px;
     backdrop-filter: blur(8px);
-    transition: background-color var(--transicao-suave), border-color var(--transicao-suave);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.navbar .logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .search-container input {
+    padding: 8px 12px;
+    border: 2px solid #2a2a2a;
+    border-radius: 20px;
+    width: 250px;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar .search-container input:focus {
+    width: 350px;
+    outline: none;
+    border-color: #4CAF50;
 }
 
 .navbar a {
-    padding: 0.75rem 1.25rem;
-    font-size: 1.125rem;
+    padding: 10px 20px;
     letter-spacing: 0.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 6px;
-    transition: color var(--transicao-suave), transform var(--transicao-suave), box-shadow var(--transicao-suave);
+    border-radius: 8px;
+    transition: color 0.25s ease;
 }
 
 .navbar a i {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    transition: color var(--transicao-suave), transform var(--transicao-suave);
+    margin-bottom: 8px;
+    transition: color 0.25s ease;
 }
 
-
-
-/* Efeito de hover mais sutil */
 .navbar a:hover {
-
-    /* funcionou quando coloquei ele aqui  */
     text-decoration: none;
-
-    color: var(--verde-neon);
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil para o hover */
-    box-shadow: 0 0 6px var(--verde-neon), 0 0 10px var(--verde-neon);
+    color: #ffffff;
 }
 
-/* Efeito sutil quando pressionado */
 .navbar a:active {
-    transform: scale(0.98);
+    transform: scale(1);
 }
 
 .navbar ul {
@@ -84,32 +91,34 @@ a {
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* Permite que os itens "quebrem" para a próxima linha se necessário */
 }
 
 .navbar li {
-    margin-right: 1.25rem;
-    transition: color var(--transicao-suave);
-}
-
-/* Hover nos itens de lista - apenas mudanças de cor e sombra */
-.navbar li:hover {
-    color: var(--verde-neon);
-    box-shadow: 0 0 6px var(--verde-neon), 0 0 10px var(--verde-neon);
+    margin-right: 20px;
+    transition: color 0.25s ease;
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte para caber melhor */
+        padding-left: 8px; /* Diminui o padding para otimizar o espaço */
+        padding-right: 8px;
     }
 
     .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
+        justify-content: center; /* Centraliza os itens em dispositivos móveis */
+        flex-wrap: wrap; /* Permite que os itens da navbar quebrem para a próxima linha em telas pequenas */
     }
 
     .navbar li {
-        margin-bottom: 1rem;
+        margin-right: 15px; /* Diminui o espaçamento entre os itens */
+        margin-bottom: 10px; /* Adiciona um pequeno espaçamento vertical */
+    }
+
+    .navbar .search-container input {
+        width: 100%;
+        margin-top: 10px;
     }
 }
+
