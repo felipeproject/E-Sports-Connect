@@ -11,12 +11,7 @@
     <!-- Link para o CSS do Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Link para o JavaScript do Bootstrap (com dependências do jQuery e Popper.js) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <title>Página Inicial</title>
+    <title>E-Sports Connect</title>
 </head>
 
 <body>
@@ -49,8 +44,15 @@
         window.onload = loadNavbar;
     </script>
 
-    <!-- Script JavaScript -->
-    <script src="scripts/script.js"></script>
+    <!-- Carregar o jQuery completo antes do Bootstrap para evitar problemas com dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Script do Popper.js (necessário para o Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <!-- Script do Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script JavaScript personalizado -->
+    <script src="scripts/script.js" async></script>
 </body>
 
 </html>
